@@ -1343,10 +1343,22 @@
 	
 	#testimonial {
 		text-align: center;
-		padding: 50px 100px 50px 100px;
+		padding: 50px;
 		color: #000;
 		background-color: #eeeef5;
 		font-size: 120%;
+		-moz-align-items: center;
+		-webkit-align-items: center;
+		-ms-align-items: center;
+		align-items: center;
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		justify-content: center;
+		-moz-justify-content: center;
+		-webkit-justify-content: center;
+		-ms-justify-content: center;
 		}
 		#testimonial h3{
 			color: #000;
