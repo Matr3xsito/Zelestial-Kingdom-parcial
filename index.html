@@ -14,9 +14,21 @@
 		<script src="https://kit.fontawesome.com/9cf98b3062.js" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="shortcut icon" href="images/ZK-logo.png" type="image/x-icon">
-		
+		<script>
+			var v1;
+			function abre()
+			{
+				v1=window.open("images/publicidad.gif","publicidad","width=500,height=500,scrollbars=no,resizable=no");
+				v1.status="Ventana creada para publicidad";
+				status="Ventana Estandar del Navegador";
+			}
+			function cierra()
+			{
+			v1.close();
+			}
+		</script>
 	</head>
-	<body id="top">
+	<body id="top" onload="abre()">
 
 			<!-- Banner -->
 			<!--
@@ -25,13 +37,52 @@
 				formats to work correctly.
 			-->
 				<section id="banner">
+					<div class="imagen_fondo">
+						<script language="JavaScript" type="text/javascript">
+				
+							// La función devuelve un número entre 0 y "nums - 1"
+							function getRandom(nums)
+							{
+								var ranNum= Math.round(Math.random()*nums);
+								return ranNum;
+							}
+							 
+							// Nos dice cuantas imágenes tenemos
+							var numberOfImages = 5;
+							var randomNumber = getRandom(numberOfImages);
+							 
+							// Creamos un Array con los nombres de las imagenes, introduce tantas como necesites pero recuerda actualizar también la variable numberOfImages
+							var image = new Array(5);
+							image[0]="16446376-copo-de-nieve-de-fondo-textura-patrón-sin-fisuras";
+							image[1]="color-draw-colored-pencils-mirroring-37539";
+							image[2]="florian-olivo-Mf23RF8xArY-unsplash"; 
+							image[3]="yellow-pikachu-plushmascot-1049622";
+							image[4]="Zelestial Kingdom";
+						
+							   document.write(
+							"<div class='imagen_fondo'><img id='cambiar' src='images/" + image[randomNumber] + ".jpg' /></div>");
+							console.log(document.write());
+							console.log(randomNumber);
+							
+							
+						</script>
 						<div class="inner">
+							<div class="mifecha">
+								La fecha de hoy es:
+								<script>
+										var f = new Date();
+										document.write(f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear());
+										</script>
+								</script>
+							</div>
+							
 							<header>
 								<h1>Zelestial Kingdom</h1>
 								<p>Una comunidad amante del Anime, el Gaming y mucho más</p>
 							</header>
 							<a href="#main" class="more">Learn More</a>
 						</div>
+					</div>
 				</section>
 
 				<!--Testimonial-->
@@ -55,7 +106,7 @@
 									<div class="inner">
 										<h3>La Historia de Zelestia</h3>
 										<p>Todo buen Reino tiene una gran historia que contar.</p>
-										<a href="https://discord.gg/5RPpSAh" class="button fit" target="_blank">Ver más</a>
+										<a href="HZelestia.html" class="button fit" target="_blank">Ver más</a>
 									</div>
 								</div>
 							</div>
@@ -117,6 +168,23 @@
 					</div>
 				</div>
 
+				<div class="formulario">
+					<form name="formulario">
+						<table width="80%" border="0" align="center">
+						<tr	tr>
+							<td id="introducir">Introduzca su correo aquí:</td>
+						<td><input name="nombre" type="text" id="nombre" size="50"></td>
+						</tr>
+						<tr>
+						<td>&nbsp;</td>
+						<td><input type="button" name="Button" value="Enviar" onClick="valida();">
+						<input type="reset" name="Submit2" value="Limpiar"></td>
+						</tr>
+						</table>
+						</form>
+				</div>
+					
+
 			<!-- Footer -->
 				<footer id="footer">
 					<div class="inner">
@@ -141,6 +209,40 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				function valida()
+				{
+					var d;
+					//esta es una variabla de tipo general muy usada para Javascript
+					d=document.formulario;
+					// se asigna el nombre del formulario al documento
+					if (d.nombre.value=="")
+					{
+					alert("No ha escrito el Nombre");
+					d.nombre.focus();
+					return;
+					}
+					else
+					{
+					alert("Nombre registrado satisfactoriamente")
+					d.nombre.focus();
+					}
+				}
+				
+				function fecha()
+					{
+						var obj_fecha=new Date();
+						var completo=obj_fecha.toGMTString();
+						var hora=obj_fecha.getHours();
+						var minuto=obj_fecha.getMinutes();
+						var segundo=obj_fecha.getSeconds();
+						var dia=obj_fecha.getDate();
+						var mes=obj_fecha.getMonth()+1;
+						var anis=obj_fecha.getYear();
+						alert(completo);
+					}
+			</script>
 
-	</body>
+			
+				
 </html>
